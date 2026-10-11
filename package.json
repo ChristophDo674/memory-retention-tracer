@@ -1,6 +1,6 @@
 {
   "name": "memory-retention-tracer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tracks which closures retain a given object reference and reports the scope chain path from the entry point to each retainer.",
   "type": "module",
   "main": "src/index.js",
