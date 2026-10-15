@@ -39,3 +39,10 @@ The trade-off is manual registration. The library cannot see closures you did no
 - `registerScope(scopeId, parentId, name, captures?)` — register a child scope; returns `scopeId`.
 - `addCapture(scopeId, obj)` — record an additional captured reference on an existing scope.
 - `trace(target)` — returns `{ retainer: string, path: string[] }[]` for every scope directly retaining `target`.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
